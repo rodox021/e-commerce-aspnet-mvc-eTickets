@@ -11,6 +11,7 @@ namespace eTickets.Models.Enums
         Comedy,
         Drama,
         Documentary,
-        Terror
+        Horror,
+        Cartoon
     }
 }
