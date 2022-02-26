@@ -27,7 +27,12 @@ namespace eTickets
         {
             services.AddControllersWithViews();
             //dbContext configuration
-            services.AddDbContext<AppDbContext>(options => options.UseMySql(Configuration.GetConnectionString("stringConn"), builder => builder.MigrationsAssembly("eTickets") ));
+            services.AddDbContext<AppDbContext>(options => options.UseMySql(Configuration.GetConnectionString("eTicketsContext"), builder => builder.MigrationsAssembly("eTickets") ));
+
+
+            string mySqlConnectionStr = Configuration.GetConnectionString("eTicketsContext");
+           // services.AddDbContextPool<AppDbContext>(options => options.UseMySql(mySqlConnectionStr, ServerVersion.AutoDetect(mySqlConnectionStr)));
+
 
 
         }

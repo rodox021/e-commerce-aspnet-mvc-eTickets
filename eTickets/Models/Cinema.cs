@@ -9,7 +9,8 @@ namespace eTickets.Models
     public class Cinema
     {
         [Key]
-        public int ActoIdrId { get; set; }
+        public int ActorId { get; set; }
+
 
         public string Logo { get; set; }
         public string Name { get; set; }
