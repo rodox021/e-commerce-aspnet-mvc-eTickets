@@ -1,6 +1,8 @@
+using eTickets.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -17,15 +19,19 @@ namespace eTickets
         {
             Configuration = configuration;
         }
-
+        
         public IConfiguration Configuration { get; }
-
+        //------------------------------------CONFIGURESERVICE---------------------------------------------------------
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-        }
+            //dbContext configuration
+            services.AddDbContext<AppDbContext>(options => options.UseMySql(Configuration.GetConnectionString("stringConn"), builder => builder.MigrationsAssembly("eTickets") ));
 
+
+        }
+        //----------------------------------------CONFIGURE-----------------------------------------------------
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
@@ -53,5 +59,6 @@ namespace eTickets
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }
+        //---------------------------------------------------------------------------------------------
     }
 }
