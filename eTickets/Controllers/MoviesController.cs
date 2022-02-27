@@ -16,9 +16,10 @@ namespace eTickets.Controllers
             _moviesServices = moviesServices;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var allMovies = await _moviesServices.FindAllAsync();
+            return View(allMovies);
         }
     }
 }
