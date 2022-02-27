@@ -1,0 +1,13 @@
+﻿.my-gradiente {
+    /*background: #5433FF;*/ /* fallback for old browsers */
+    /*background: -webkit-linear-gradient(to right, #A5FECB, #20BDFF, #5433FF);*/ /* Chrome 10-25, Safari 5.1-6 */
+    /*background: linear-gradient(to right, #A5FECB, #20BDFF, #5433FF);*/ /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    /*background: #03001e;*/ /* fallback for old browsers */
+    /*background: -webkit-linear-gradient(to right, #fdeff9, #ec38bc, #7303c0, #03001e);*/ /* Chrome 10-25, Safari 5.1-6 */
+    /*background: linear-gradient(to right, #fdeff9, #ec38bc, #7303c0, #03001e);*/ /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    background: #9D50BB; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #6E48AA, #9D50BB); /* Chrome 10-25, Safari 5.1-6 */
+    /* background: linear-gradient(to right,#593196, #FFF ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to left, #fdeff9, #4A06D6, #7303c0, #593196);
+}

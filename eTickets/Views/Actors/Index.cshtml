@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Actor>
+@{
+    ViewData["Title"] = "Actors";
+}
+
+
+<div class="container-fluid d-flex flex-column justify-content-between mb-4">
+    <div class="my-gradiente rounded-lg">
+        <div class="d-flex flex-row align-content-center justify-content-around">
+            <img class="img-fluid rounded-circle " style="max-width:200px" src="https://freepikpsd.com/file/2019/10/actor-icon-png-6-Transparent-Images.png" alt="Alternate Text" />
+            <h1 class="align-self-center text" style="font-style:italic">Actors</h1>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<div class="container ">
+    @foreach (var item in Model)
+    {
+        <div class="card bg-light mb-3 mr-3">
+            <div class="card-header d-flex align-items-center">
+                <div class="flex-grow-1 d-flex align-items-md-center">
+                    <img class="rounded-circle mr-4" style="max-width: 100px" src=" @item.ProfilePictureURL" alt="Alternate Text" />
+
+                </div>
+                <div class="">
+
+                    <a class="btn btn-outline-primary"><i class="bi bi-pencil-square"></i>@*Edit*@</a>
+                    <a class="btn btn-outline-info"><i class="bi bi-eye"></i>@*Details*@</a>
+                    <a class="btn btn-danger text-white"><i class="bi bi-trash"></i>@*Delete*@</a>
+                </div>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">@item.FullName</h5>
+                <p class="card-text">@item.Bio</p>
+            </div>
+        </div>
+    }
+
+</div>
+
+

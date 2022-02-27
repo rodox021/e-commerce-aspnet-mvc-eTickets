@@ -1,4 +1,5 @@
 using eTickets.Data;
+using eTickets.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -31,9 +32,12 @@ namespace eTickets
 
 
             string mySqlConnectionStr = Configuration.GetConnectionString("eTicketsContext");
-           // services.AddDbContextPool<AppDbContext>(options => options.UseMySql(mySqlConnectionStr, ServerVersion.AutoDetect(mySqlConnectionStr)));
+            // services.AddDbContextPool<AppDbContext>(options => options.UseMySql(mySqlConnectionStr, ServerVersion.AutoDetect(mySqlConnectionStr)));
 
-
+            services.AddScoped<ActorsServices>();
+            services.AddScoped<ProducersServices>();
+            services.AddScoped<CinemasServices>();
+            services.AddScoped<MoviesServices>();
 
         }
         //----------------------------------------CONFIGURE-----------------------------------------------------
