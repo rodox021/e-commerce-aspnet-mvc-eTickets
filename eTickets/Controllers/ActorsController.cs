@@ -1,4 +1,5 @@
-﻿using eTickets.Services;
+﻿using eTickets.Models;
+using eTickets.Services;
 using eTickets.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -22,9 +23,15 @@ namespace eTickets.Controllers
             var actors = await _actorsService.GetAll();
             return View(actors);
         }
-        public IActionResult Create()
+        public IActionResult Create(Actor actor)
         {
-            return View();
+            if (!ModelState.IsValid)
+            {
+                return View(actor);
+            }
+
+            _actorsService.Add(actor);
+            return RedirectToAction(nameof(Index));
         }
     }
 }

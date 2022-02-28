@@ -17,7 +17,11 @@
 
 
 
+
 <div class="container ">
+    <div class="mb-4 mr-3 d-flex justify-content-end" >
+        <a asp-controller="Actors" asp-action="Create" class="btn btn-outline-success"><i class="bi bi-plus-circle"></i> New</a>
+    </div>
     @foreach (var item in Model)
     {
         <div class="card bg-light mb-3 mr-3">

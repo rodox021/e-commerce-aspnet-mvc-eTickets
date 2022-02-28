@@ -20,7 +20,8 @@ namespace eTickets.Services
         //
         public void Add(Actor actor)
         {
-            throw new NotImplementedException();
+            _context.Actors.Add(actor);
+            _context.SaveChanges();
         }
         //------------------------DELETE---------------------------------------------
         public void Delete(int id)
